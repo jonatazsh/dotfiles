@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+# 1. DEFINIÇÕES
+TERMINAL="alacritty"
+TERM_OPTS="--class imagevisualizer,imagevisualizer -t imagevisualizer"
+
+# 2. DEFINA O CAMINHO PARA O SEU SCRIPT PRINCIPAL
+#    (MUDE ESTE CAMINHO para o local real do Arquivo 2)
+SCRIPT_PRINCIPAL="$HOME/.local/bin/imgpicker"
+
+PIC=$(find $HOME/Pictures -maxdepth 1 -type d)
+# 3. LANÇA O NOVO TERMINAL
+#    - O '&' no final coloca tudo em background.
+"$TERMINAL" $TERM_OPTS -e "$SCRIPT_PRINCIPAL"  "$PIC" m --tac &
+
